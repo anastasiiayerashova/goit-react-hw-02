@@ -1,0 +1,8 @@
+.optionsDiv {
+  display: flex;
+  gap: 15px;
+}
+
+.buttons {
+  border: 1px solid black;
+}

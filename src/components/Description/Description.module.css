@@ -1,0 +1,13 @@
+.descDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.descTitle {
+  font-size: 40px;
+}
+
+.descText {
+  font-size: 25px;
+}
