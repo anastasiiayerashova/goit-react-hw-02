@@ -1,0 +1,16 @@
+.fdbList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.fdbGood {
+  color: green;
+}
+
+.fdbBad {
+  color: red;
+}

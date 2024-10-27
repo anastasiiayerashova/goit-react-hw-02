@@ -4,8 +4,32 @@
   gap: 20px;
 }
 
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
 .descTitle {
   font-size: 40px;
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 600;
+  animation: gradientAnimation 3s linear infinite;
 }
 
 .descText {

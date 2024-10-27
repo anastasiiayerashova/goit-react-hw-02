@@ -3,6 +3,32 @@
   gap: 15px;
 }
 
-.buttons {
-  border: 1px solid black;
+.buttonG {
+  border: 2px solid green;
+  color: green;
+  display: flex;
+  gap: 5px;
+}
+
+.buttonN {
+  border: 2px solid black;
+  color: black;
+  display: flex;
+  gap: 5px;
+}
+
+.buttonB {
+  border: 2px solid red;
+  color: red;
+  display: flex;
+  gap: 5px;
+}
+
+.smile {
+  width: 25px;
+  height: 25px;
+}
+
+.buttonR {
+  width: 120px;
 }

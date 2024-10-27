@@ -1,12 +1,14 @@
 import s from './Options.module.css';
+import { CiFaceSmile } from "react-icons/ci";
+import { PiSmileySad, PiSmileyMelting } from "react-icons/pi";
 
-export default function Options({states, updateGood}) {
-   console.log(states.good)
+export default function Options({ updateFeedback, resetFeedback, showFeedback}) {
     return (
         <div className={s.optionsDiv}>
-            <button className={s.buttons} onClick={updateGood}>Good: {states.good}</button>
-            <button className={s.buttons}>Neutral: {states.neutral}</button>
-            <button className={s.buttons}>Bad: {states.bad}</button>
+            <button className={s.buttonG} onClick={() => {updateFeedback("good")}} >Good <CiFaceSmile className={s.smile} /></button>
+            <button className={s.buttonN} onClick={() => { updateFeedback("neutral") }}>Neutral <PiSmileyMelting className={s.smile} /></button>
+            <button className={s.buttonB} onClick={() => { updateFeedback("bad") }}>Bad <PiSmileySad className={s.smile} /></button>
+            {showFeedback === true ? <button className={s.buttonR} onClick={resetFeedback}>Reset</button> : null}
         </div>
     )
 }
