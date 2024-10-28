@@ -9,6 +9,7 @@ export default function App() {
     const [values, setValues] = useState(() => {
       
     const savedObj = window.localStorage.getItem("key");
+      
     if (savedObj) {
       try {
         return JSON.parse(savedObj)
@@ -30,14 +31,12 @@ export default function App() {
     window.localStorage.setItem("key", JSON.stringify(values));
 }, [values])
 
-  const [showFeedback, setShowFeedback] = useState(false);
-  
   const updateFeedback = (feedbackType) => {
     setValues((prevValues) => ({
   ...prevValues,
   [feedbackType]: prevValues[feedbackType] + 1
     }))
-    setShowFeedback(true);
+    
   }
 
   const totalFeedback = values.good + values.neutral + values.bad;
@@ -49,7 +48,7 @@ export default function App() {
       neutral: 0,
       bad: 0,
     })
-    setShowFeedback(false);
+    
   }
   
   return (
@@ -58,9 +57,9 @@ export default function App() {
         <Options 
         updateFeedback={updateFeedback}
         resetFeedback={resetFeedback}
-        showFeedback={showFeedback}
+        totalFeedback={totalFeedback}
       /> 
-      {showFeedback ? <Feedback states={values} totalFeedback={totalFeedback} positiveFeedback={positiveFeedback} /> : <Notification />}
+      {totalFeedback > 0 ? <Feedback states={values} totalFeedback={totalFeedback} positiveFeedback={positiveFeedback} /> : <Notification />}
     </div>
   )
 }
